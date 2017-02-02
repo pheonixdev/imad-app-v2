@@ -5,6 +5,40 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var pages= {
+    pageOne: {
+        title: 'First Page|Pheonixdev',
+        date: '2 Feb,2017',
+        content: `<p>
+        
+        
+        
+        `
+    },
+    pageTwo: {
+        title: 'Second Page|Pheonixdev',
+        date: '2 Feb,2017',
+        content: `
+        
+        
+        
+        `
+    },
+    pageThree: {
+        title: 'Third Page|Pheonixdev',
+        date: '2 Feb,2017',
+        content: `
+        
+        
+        
+        `
+    }
+};
+       
+
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
