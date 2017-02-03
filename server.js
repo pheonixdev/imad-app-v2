@@ -102,7 +102,7 @@ function createTemplate(data){
                     ${content}
                 <script type="text/javascript" src="/ui/main.js">
                 </script>
-                <a href="https://cloud.imad.hasura.io/code/files/ui%2Findex.html">Back</a>
+                <a href=":/ui/index.html">Back</a>
             </body>
         </html>`;
     return htmlTemplate;
