@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var pages= {
-    pageOne: {
+    'pageOne': {
         title: 'Education|Pheonixdev',
         date: '3 Feb,2017',
         content: `<div>
@@ -23,20 +23,20 @@ var pages= {
                     </p>
                 </div> `
     },
-    pageTwo: {
+    'pageTwo': {
         title: 'Interests|Pheonixdev',
         date: '3 Feb,2017',
         content: `<div>
                     <h5 class="interest_title">Football</h5>
                     <p>
-                        <img src="/ui/soccerPlayers" alt="Football image" align="centre"/>
+                        <img src="/ui/soccerPlayers.png" alt="Football image" align="centre"/>
                             Favorite Team: FC Barcelona
                             <a href="https://www.fcbarcelona.com/">
-                            <img src="/ui/FCBBarcelona-Logo-cool-Wallpaper" alt="Barcelona image" align="centre"/>
+                            <img src="/ui/FCBBarcelona-Logo-cool-Wallpaper.png" alt="Barcelona image" align="centre"/>
                             </a>
                             Favorite Player: Lionel Messi
                             <a href="https://en.wikipedia.org/wiki/Lionel_Messi">
-                            <img src="/ui/lionel-messi-barcelona" alt="Messi image" align="centre"/>
+                            <img src="/ui/lionel-messi-barcelona.png" alt="Messi image" align="centre"/>
                             </a>
                     </p>
                     <h5 class="interest_title">Coding</h5>
@@ -60,7 +60,7 @@ var pages= {
                     </p>
                 </div>`
     },
-    pageThree: {
+    'pageThree': {
         title: 'Miscellaneous|Pheonixdev',
         date: '3 Feb,2017',
         content: `
@@ -77,12 +77,41 @@ var pages= {
     }
 };
        
-
-
+function createTemplate(data){
+    var title= data.title;
+    var date= data.date;
+    var content= data.content;
+    var htmlTemplate =`
+        <!doctype html>
+        <html>
+            <head>
+                <title>
+                    ${title}
+                </title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link href="/ui/style.css" rel="stylesheet"></link>
+            </head>
+            <body>
+                <div class="center">
+                    ${date}
+                </div>
+                <br>
+                    ${content}
+                <script type="text/javascript" src="/ui/main.js">
+                </script>
+            </body>
+        </html>`;
+    return htmlTemplate;
+    }
 
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+app.get('/ui/:pageNumber', function (req, res) {
+    var pageNumber = req.params.pageNumber;
+  res.send(createTemplate(pages[pageNumber]));
 });
 
 app.get('/ui/style.css', function (req, res) {
