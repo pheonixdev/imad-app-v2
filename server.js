@@ -12,9 +12,9 @@ var pages= {
         content: `<div>
                     <h5 class="education_title">School education</h5>
                     <p>
-                        1998-2001 : Infant Jesus School, N.Paravoor.
-                        2001-2002 : St.Thomas Central School, Mukkolakal.
-                        2003-2011 : Loyola School, Sreekaryam.
+                        1998-2001 : Infant Jesus School, N.Paravoor.<br>
+                        2001-2002 : St.Thomas Central School, Mukkolakal.<br>
+                        2003-2011 : Loyola School, Sreekaryam.<br>
                     </p>
                     <h5 class="education_title">College education</h5>
                     <p>
