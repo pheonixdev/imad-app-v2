@@ -101,8 +101,8 @@ function createTemplate(data){
                 <br>
                     ${content}
                 <script type="text/javascript" src="/ui/main.js">
-                <a href="/ui/index.html" class="back_button>Back</a>
                 </script>
+                <a href="/ui/index.html">Back</a>
             </body>
         </html>`;
     return htmlTemplate;
