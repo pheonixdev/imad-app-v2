@@ -30,14 +30,14 @@ var pages= {
         content: `<div>
                     <h5 class="interest_title">Football</h5>
                     <p>
-                        <img src="/ui/soccerPlayers.png" alt="Football image" align="centre"/>
+                        <img src="ui/soccerPlayers.png" alt="Football image" align="centre"/>
                             Favorite Team: FC Barcelona
                             <a href="https://www.fcbarcelona.com/">
-                            <img src="/ui/FCBBarcelona-Logo-cool-Wallpaper.png" alt="Barcelona image" align="centre"/>
+                            <img src="ui/FCBBarcelona-Logo-cool-Wallpaper.png" alt="Barcelona image" align="centre"/>
                             </a>
                             Favorite Player: Lionel Messi
                             <a href="https://en.wikipedia.org/wiki/Lionel_Messi">
-                            <img src="/ui/lionel-messi-barcelona.png" alt="Messi image" align="centre"/>
+                            <img src="ui/lionel-messi-barcelona.png" alt="Messi image" align="centre"/>
                             </a>
                     </p>
                     <h5 class="interest_title">Coding</h5>
