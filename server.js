@@ -30,14 +30,14 @@ var pages= {
         content: `<div>
                     <h5 class="interest_title">Football</h5>
                     <p>
-                        <img src="ui/soccerPlayers.png" alt="Football image" align="centre"/>
+                        <img src="/ui/soccerPlayers.png" alt="Football image" align="centre"/>
                             Favorite Team: FC Barcelona
                             <a href="https://www.fcbarcelona.com/">
-                            <img src="ui/FCBBarcelona-Logo-cool-Wallpaper.png" alt="Barcelona image" align="centre"/>
+                            <img src="/ui/FCBBarcelona-Logo-cool-Wallpaper.png" alt="Barcelona image" align="centre"/>
                             </a>
                             Favorite Player: Lionel Messi
                             <a href="https://en.wikipedia.org/wiki/Lionel_Messi">
-                            <img src="ui/lionel-messi-barcelona.png" alt="Messi image" align="centre"/>
+                            <img src="/ui/lionel-messi-barcelona.png" alt="Messi image" align="centre"/>
                             </a>
                     </p>
                     <h5 class="interest_title">Coding</h5>
@@ -118,10 +118,6 @@ app.get('/ui/:pageNumber', function (req, res) {
   res.send(createTemplate(pages[pageNumber]));
 });
 
-app.get('/ui/:filename', function (req, res) {
-res.sendFile(path.join(__dirname, 'ui', req.params.filename));
-});
-
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
@@ -130,6 +126,9 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+app.get('/ui/:filename', function (req, res) {
+res.sendFile(path.join(__dirname, 'ui', req.params.filename));
+});
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
