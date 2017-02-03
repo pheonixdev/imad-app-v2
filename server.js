@@ -102,7 +102,7 @@ function createTemplate(data){
                     ${content}
                 <script type="text/javascript" src="/ui/main.js">
                 </script>
-                <a href="javascript:history.go(-1)">[Go Back]</a>
+                <a href="javascript:history.go(-1)" class="go_back">[Go Back]</a>
             </body>
         </html>`;
     return htmlTemplate;
