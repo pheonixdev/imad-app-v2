@@ -21,7 +21,6 @@ var pages= {
                         2012-2016: Lourdes Matha College of Science and Technology, Kuttichal.<br>
                                    (Bachelor of Technology in Electronics and Communication)<br>
                     </p>
-                    <a href="/ui/index.html" class="back_button>Back</a>
                 </div>
                 `
     },
@@ -60,7 +59,6 @@ var pages= {
                             <li><a href="http://www2.ea.com/pc/fifa">Fifa</a></li>
                         </ul>
                     </p>
-                    <a href="/ui/index.html" class="back_button>Back</a>
                 </div>
                 `
     },
@@ -77,7 +75,6 @@ var pages= {
                             <li><a href="linkedin.com/in/sabarinath-m-s-9389b3123">Linkedin</a></li>
                         </ul>
                     </p>
-                    <a href="/ui/index.html" class="back_button>Back</a>
                 </div>         
                 `
     }
@@ -104,6 +101,7 @@ function createTemplate(data){
                 <br>
                     ${content}
                 <script type="text/javascript" src="/ui/main.js">
+                <a href="/ui/index.html" class="back_button>Back</a>
                 </script>
             </body>
         </html>`;
