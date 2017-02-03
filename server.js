@@ -102,7 +102,7 @@ function createTemplate(data){
                     ${content}
                 <script type="text/javascript" src="/ui/main.js">
                 </script>
-                <a href="ui/index.html">Back</a>
+                <a href="/index.html">Back</a>
             </body>
         </html>`;
     return htmlTemplate;
