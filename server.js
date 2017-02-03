@@ -72,7 +72,7 @@ var pages= {
                         <ul id="social_links">
                             <li><a href="https://www.facebook.com/sabari.nath.52687">Facebook</a></li>
                             <li><a href="https://www.instagram.com/sabri_nath/?hl=en">Instagram</a></li>
-                            <li><a href="linkedin.com/in/sabarinath-m-s-9389b3123">Linkedin</a></li>
+                            <li><a href="https://www.linkedin.com/in/sabarinath-m-s-9389b3123">Linkedin</a></li>
                         </ul>
                     </p>
                 </div>         
