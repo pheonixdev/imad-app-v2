@@ -18,10 +18,12 @@ var pages= {
                     </p>
                     <h5 class="education_title">College education</h5>
                     <p>
-                        2012-2016: Lourdes Matha College of Science and Technology, Kuttichal.
-                                   (Bachelor of Technology in Electronics and Communication)
+                        2012-2016: Lourdes Matha College of Science and Technology, Kuttichal.<br>
+                                   (Bachelor of Technology in Electronics and Communication)<br>
                     </p>
-                </div> `
+                </div>
+                <a href="/ui/index.html" class="back_button>Back</a>
+                `
     },
     'pageTwo': {
         title: 'Interests|Pheonixdev',
@@ -58,7 +60,9 @@ var pages= {
                             <li><a href="http://www2.ea.com/pc/fifa">Fifa</a></li>
                         </ul>
                     </p>
-                </div>`
+                </div>
+                <a href="/ui/index.html" class="back_button>Back</a>
+                `
     },
     'pageThree': {
         title: 'Miscellaneous|Pheonixdev',
@@ -73,7 +77,9 @@ var pages= {
                             <li><a href="linkedin.com/in/sabarinath-m-s-9389b3123">Linkedin</a></li>
                         </ul>
                     </p>
-                </div>         `
+                </div>         
+                <a href="/ui/index.html" class="back_button>Back</a>
+                `
     }
 };
        
