@@ -24,5 +24,6 @@ body {
     height: 48px;
     width: 96px;
 	text-align: center;
-	font: bold "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font: sans-serif;
+	border-radius: 10%;
 }
