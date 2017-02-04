@@ -15,6 +15,7 @@ body {
 .profHead{
     font-family: 'Sansita', sans-serif;
     font-size: 300%;
+    box-sizing:border-box;
 }
 
 .profButton{
@@ -23,7 +24,6 @@ body {
     color: white;
     height: 48px;
     width: 96px;
-    box-sizing:border-box;
     border-color: #424242;
     border-style: groove;
 	text-align: center;
