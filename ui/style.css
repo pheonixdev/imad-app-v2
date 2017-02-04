@@ -18,12 +18,10 @@ body {
 }
 
 .profButton{
-    display: block;
-    font-size: 12px;
+    font-size: 24px;
     background: #4882B4;
-    height: 32px;
-    width: 80px;
-    color: rgba(0, 0, 0, 0.55);
+    height: 48px;
+    width: 96px;
 	text-align: center;
 	font: bold "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
