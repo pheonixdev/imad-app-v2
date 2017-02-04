@@ -123,7 +123,7 @@ app.get('/style.css', function (req, res) {
 });
 
 app.get('/minions.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+  res.sendFile(path.join(__dirname, 'ui', 'minions.png'));
 });
 
 app.get('/ui/:filename', function (req, res) {
