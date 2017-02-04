@@ -24,6 +24,7 @@ body {
     height: 48px;
     width: 96px;
     border-color: #424242;
+    border-style: solid;
 	text-align: center;
 	font: sans-serif;
 	border-radius: 15px;
