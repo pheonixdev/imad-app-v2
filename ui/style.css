@@ -15,7 +15,7 @@ body {
 .profHead{
     font-family: 'Sansita', sans-serif;
     font-size: 300%;
-    box-sizing:border-box;
+    display: block;
 }
 
 .profButton{
