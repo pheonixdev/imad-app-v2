@@ -23,6 +23,7 @@ body {
     color: white;
     height: 48px;
     width: 96px;
+    border: 2px solid black;
 	text-align: center;
 	font: sans-serif;
 	border-radius: 15px;
