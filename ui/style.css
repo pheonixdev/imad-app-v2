@@ -18,8 +18,10 @@ body {
 }
 
 .profButton{
+    display: block;
     font-size: 12px;
     background: #4882B4;
     height: 32px;
     width: 80px;
+    border: 2px solid rgba(33, 68, 72, 0.59);
 }
