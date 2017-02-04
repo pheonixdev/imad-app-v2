@@ -30,14 +30,14 @@ var pages= {
         content: `<div>
                     <h5 class="interest_title">Football</h5>
                     <p>
-                        <img src="/ui/soccerPlayers.png" alt="Football image" align="centre"/>
+                        <img src="/soccerPlayers.png" alt="Football image" align="centre"/>
                             Favorite Team: FC Barcelona
                             <a href="https://www.fcbarcelona.com/">
-                            <img src="/ui/FCBBarcelona-Logo-cool-Wallpaper.png" alt="Barcelona image" align="centre"/>
+                            <img src="/FCBBarcelona-Logo-cool-Wallpaper.png" alt="Barcelona image" align="centre"/>
                             </a>
                             Favorite Player: Lionel Messi
                             <a href="https://en.wikipedia.org/wiki/Lionel_Messi">
-                            <img src="/ui/lionel-messi-barcelona.png" alt="Messi image" align="centre"/>
+                            <img src="/lionel-messi-barcelona.png" alt="Messi image" align="centre"/>
                             </a>
                     </p>
                     <h5 class="interest_title">Coding</h5>
@@ -92,7 +92,7 @@ function createTemplate(data){
                     ${title}
                 </title>
                 <meta name="viewport" content="width=device-width, initial-scale=1">
-                <link href="/ui/style.css" rel="stylesheet"></link>
+                <link href="/style.css" rel="stylesheet"></link>
             </head>
             <body>
                 <div class="center">
@@ -100,7 +100,7 @@ function createTemplate(data){
                 </div>
                 <br>
                     ${content}
-                <script type="text/javascript" src="/ui/main.js">
+                <script type="text/javascript" src="/main.js">
                 </script>
                 <a href="javascript:history.go(-1)" class="go_back">[Go Back]</a>
             </body>
@@ -122,7 +122,7 @@ app.get('/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/ui/madi.png', function (req, res) {
+app.get('/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
