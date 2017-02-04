@@ -23,7 +23,7 @@ body {
     color: white;
     height: 48px;
     width: 96px;
-    border: 2px solid #BCAAA4;
+    border: 2px normal #BCAAA4;
 	text-align: center;
 	font: sans-serif;
 	border-radius: 15px;
