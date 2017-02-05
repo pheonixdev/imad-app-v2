@@ -23,7 +23,8 @@ body {
     font-family: 'Sansita', sans-serif;
     font-size: 300%;
     position: relative;
-    top:40px;
+    top:10px;
+    right:10px;
 }
 
 .profButton{
