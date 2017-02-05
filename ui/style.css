@@ -16,7 +16,7 @@ body {
     height: 200px;
     float:left;
     position: relative;
-    top:40px;
+    top:100px;
     left:100px;
 }
 
@@ -25,7 +25,7 @@ body {
     font-size: 300%;
     position: relative;
     top:50px;
-    left: 400px;
+    left: 800px;
 }
 
 .profButton{
