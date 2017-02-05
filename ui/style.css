@@ -12,13 +12,6 @@ body {
     height: 200px;
 }
 
-#profPic{
-    width:400px;
-    height:400px;
-    border-radius:20px;
-    padding-left:40px;
-}
-
 .profHead{
     font-family: 'Sansita', sans-serif;
     font-size: 300%;
