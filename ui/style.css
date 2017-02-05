@@ -20,9 +20,9 @@ body {
     font-family: 'Sansita', sans-serif;
     font-size: 300%;
     padding-top: 20px;
-     position: relative;
-    top:280px;
-    left:320px;
+     position: absolute;
+    top:120px;
+    left:400px;
 }
 
 .profButton{
