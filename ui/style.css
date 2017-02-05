@@ -30,6 +30,6 @@ body {
 	border-radius: 15px;
 }
 .linkedin,.location,.instagram,.facebook{
-    height: 100px;
-    width: 100px;
+    height: 10px;
+    width: 10px;
 }
