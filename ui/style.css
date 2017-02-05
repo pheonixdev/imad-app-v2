@@ -33,10 +33,12 @@ body {
 	text-align: center;
 	font: sans-serif;
 	border-radius: 15px;
+	position:fixed;
 }
 .logoimage{
     width: 40px;
     height: 40px;
+    position:fixed;
 }
 
 .section{
