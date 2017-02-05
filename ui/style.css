@@ -23,6 +23,9 @@ body {
 .profHead{
     font-family: 'Sansita', sans-serif;
     font-size: 300%;
+    position: relative;
+    top:20px;
+    left: 40px;
 }
 
 .profButton{
