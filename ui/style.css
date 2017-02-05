@@ -36,9 +36,6 @@ body {
 	text-align: center;
 	font: sans-serif;
 	border-radius: 15px;
-	position: relative;
-    top:40px;
-    left:200px;
 }
 .logoimage{
     width: 40px;
