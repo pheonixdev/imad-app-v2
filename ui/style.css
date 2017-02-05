@@ -8,8 +8,8 @@ body {
 }
 
 .img-medium {
-    max-width: 100%;
-    height: auto;
+    width: 160px;
+    height: 200px;
     float:left;
     position: absolute;
     top:280px;
