@@ -19,7 +19,7 @@ app.get('/prof_pic.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'prof_pic.jpg'));
 });
 
-app.get('/ui/:filename', function (req, res) {
+app.get('/:filename', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'req.param(filename)'));
 });
 
