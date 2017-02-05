@@ -29,7 +29,7 @@ body {
 	font: sans-serif;
 	border-radius: 15px;
 }
-img.linkedin,img.location,img.instagram,img.facebook{
+.linkedin,.location,.instagram,.facebook{
     height: 100px;
     width: 100px;
 }
