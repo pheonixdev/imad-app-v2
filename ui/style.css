@@ -13,6 +13,7 @@ body {
 
 .img-medium {
     height: 200px;
+    box-sizing:border-box;
 }
 
 .profHead{
