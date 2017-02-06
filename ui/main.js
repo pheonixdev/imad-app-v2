@@ -1,6 +1,6 @@
 console.log('Loaded!');
 //image workout
-var img = document.getElementbyId('profimage');
+var img = document.getElementById('profimage');
 var marginRight = 0;
 function moveLeft(){
     marginRight = marginRight + 5;
