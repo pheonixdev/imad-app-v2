@@ -3,7 +3,7 @@ console.log('Loaded!');
 var img = document.getElementById('profimage');
 var marginRight = 0;
 function moveLeft(){
-    marginRight = marginRight + 10;
+    marginRight = marginRight + 2;
     img.style.marginRight = marginRight + 'px';
 }
 img.onclick = function(){
