@@ -33,8 +33,8 @@ body {
     color: white;
     /*height: 48px;
     width: 96px;*/
-    width:auto;
-    height:100%;
+    width:200%;
+    height:auto;
     border-color: #424242;
     border-style: groove;
 	text-align: center;
