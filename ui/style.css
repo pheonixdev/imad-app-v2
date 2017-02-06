@@ -28,7 +28,7 @@ body {
 
 .profButton{
     /*font-size: 24px;*/
-    font-size:240%;
+    font-size:180%;
     background: #4882B4;
     color: white;
     /*height: 48px;
@@ -52,7 +52,7 @@ body {
     margin-left:10%;
     margin-right:10%;
     margin-bottom:20%;
-    position:relative;
+    position:absolute;
     top:5%;
     left:0;
     right:0;
