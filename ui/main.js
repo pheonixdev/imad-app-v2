@@ -1,10 +1,10 @@
 console.log('Loaded!');
 //image workout
 var img = document.getElementById('profimage');
-var marginRight = 0;
-function moveLeft(){
-    marginRight = marginRight + 2;
-    img.style.marginRight = marginRight + 'px';
+var marginLeft = 0;
+function moveRight(){
+    marginLeft = marginLeft + 2;
+    img.style.marginLeft = marginLeft + 'px';
 }
 img.onclick = function(){
     var interval = setInterval(moveLeft,50);
