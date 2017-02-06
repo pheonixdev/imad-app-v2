@@ -10,13 +10,13 @@ body {
 .img-medium {
     /*width: 160px;
     height: 200px;*/
-    width:10%;
-    height:15%;
+    width:20%;
+    height:45%;
     position: absolute;
     /*top:280px;
     left:320px;*/
-    top:10%;
-    left:20%;
+    top:40%;
+    left:30%;
 }
 
 .profHead{
