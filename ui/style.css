@@ -37,7 +37,8 @@ body {
     border-style: groove;
 	text-align: center;
 	font: sans-serif;
-	border-radius: 15px;
+	/*border-radius: 15px;*/
+	border-radius:5%;
 }
 .logoimage{
     /*width: 40px;
