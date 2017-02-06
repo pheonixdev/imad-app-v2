@@ -28,13 +28,13 @@ body {
 
 .profButton{
     /*font-size: 24px;*/
-    font-size:120%;
+    font-size:100%;
     background: #4882B4;
     color: white;
     /*height: 48px;
     width: 96px;*/
-    width:15%;
-    height:15%;
+    width:20%;
+    height:20%;
     border-color: #424242;
     border-style: groove;
 	text-align: center;
