@@ -15,8 +15,8 @@ body {
     position: absolute;
     /*top:280px;
     left:320px;*/
-    top:18em;
-    left:15em;
+    top:20%;
+    left:35%;
 }
 
 .profHead{
@@ -29,8 +29,10 @@ body {
     font-size: 24px;
     background: #4882B4;
     color: white;
-    height: 48px;
-    width: 96px;
+    /*height: 48px;
+    width: 96px;*/
+    width:30%;
+    height:15%;
     border-color: #424242;
     border-style: groove;
 	text-align: center;
@@ -38,8 +40,10 @@ body {
 	border-radius: 15px;
 }
 .logoimage{
-    width: 40px;
-    height: 40px;
+    /*width: 40px;
+    height: 40px;*/
+    width:10%;
+    height:auto;
 }
 
 .section{
