@@ -8,8 +8,10 @@ body {
 }
 
 .img-medium {
-    width: 160px;
-    height: 200px;
+   /* width: 160px;
+    height: 200px;*/
+    max-width: 100%;
+    height: auto;
     position: absolute;
     top:280px;
     left:320px;
