@@ -10,6 +10,8 @@ body {
 .img-medium {
     /*width: 160px;
     height: 200px;*/
+    width:10%;
+    height:15%;
     position: absolute;
     /*top:280px;
     left:320px;*/
