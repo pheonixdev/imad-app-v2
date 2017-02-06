@@ -33,7 +33,7 @@ body {
     color: white;
     /*height: 48px;
     width: 96px;*/
-    width:20%;
+    width:auto;
     height:100%;
     border-color: #424242;
     border-style: groove;
