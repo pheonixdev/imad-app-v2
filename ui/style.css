@@ -51,8 +51,7 @@ body {
 
 .section{
     background: #E0E0E0;
-    margin-left:10%;
-    margin-right:10%;
+    margin:10%;
     position:absolute;
     top:5%;
     left:0;
