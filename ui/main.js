@@ -4,7 +4,7 @@ var img = document.getElementbyId('profimage');
 var marginRight = 0;
 function moveLeft(){
     marginRight = marginRight + 5;
-    img.style.marginRight = marginRight + "%";
+    img.style.marginRight = marginRight + 'px';
 }
 img.onClick = function(){
     var interval = setInterval(moveLeft,50);
