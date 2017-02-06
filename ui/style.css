@@ -12,6 +12,7 @@ body {
     height: 200px;*/
     max-width: 100%;
     height: auto;
+    width: auto\9; 
     position: absolute;
     top:280px;
     left:320px;
