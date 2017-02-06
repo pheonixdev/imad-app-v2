@@ -3,9 +3,9 @@ console.log('Loaded!');
 var img = document.getElementById('profimage');
 var marginRight = 0;
 function moveLeft(){
-    marginRight = marginRight + 5;
+    marginRight = marginRight + 10;
     img.style.marginRight = marginRight + 'px';
 }
-img.onClick = function(){
+img.onclick = function(){
     var interval = setInterval(moveLeft,50);
 };
