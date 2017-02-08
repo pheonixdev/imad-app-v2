@@ -9,9 +9,6 @@ app.use(morgan('combined'));
 var visited = 0;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-  visited = visited + 1;
-    var spanvis = document.getElementById('visit');
-    spanvis.innerHTML = visited.toString();
 });
 
 
