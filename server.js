@@ -9,6 +9,17 @@ app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  var visited = 0;
+  visited = visited + 1;
+    var span = document.getElementById('visit');
+    span.innerHTML = visited.toString();
+});
+
+
+var counter = 0;
+app.get('/counter', function (req, res){
+    counter = counter + 1;
+    res.send(counter.toString());
 });
 
 app.get('/style.css', function (req, res) {
