@@ -1,11 +1,14 @@
-console.log('Loaded!');
-//image workout
-var img = document.getElementById('profimage');
-var marginLeft = 0;
-function moveRight(){
-    marginLeft = marginLeft + 2;
-    img.style.marginLeft = marginLeft + 'px';
-}
-img.onclick = function(){
-    var interval = setInterval(moveRight,50);
+//counter code
+var button = document.getElementById('profButton');
+var clicked = 0;
+button.onclick = function(){
+    //make a request to the counter end point
+    
+    //capture the response and store it in a variable
+    
+    //Render the variable in the correct span
+    clicked = clicked + 1;
+    var span = document.getElementById('count');
+    span.innerHTML = counter.toString();
+    
 };
