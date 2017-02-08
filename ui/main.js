@@ -8,7 +8,7 @@ button.onclick = function(){
     
     //Render the variable in the correct span
     clicked = clicked + 1;
-    var span = document.getElementById('count');
-    span.innerHTML = clicked.toString();
+    var spanbut = document.getElementById('count');
+    spanbut.innerHTML = clicked.toString();
     
 };
