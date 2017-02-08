@@ -6,14 +6,19 @@ button.onclick = function() {
     //Create a request
     var request = new XMLHttpRequest();
     
+    //Capture the response and store in variable
+    if(request.readyState === XMLhttpRequest.DONE){
+        //Take some action
+        
+    }
+    //Not done yet
     
-    
-    
-    
+    if(request.status === 200) {
+        var counter = request.responeText;
+        var spanbutton = document.getElementById('count');
+        spanbutton.innerHTML = counter.toString();
+    }
     //Make a request 
-    counter = counter + 1;
-    var spanbutton = document.getElementById('count');
-    spanbutton.innerHTML = counter.toString();
     
     
 };
