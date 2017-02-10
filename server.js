@@ -33,9 +33,10 @@ res.sendFile(path.join(__dirname, 'ui', req.params.filename));
 });
 
 var names = [];
-app.get('/submit-name/:name', function(req, res) {
+app.get('/submit-name/', function(req, res) {
    var name = req.query.name;//ToDo
-   res.send(names);//ToDo
+   names.push(name);
+   res.send(JSON.stringify(names));//ToDo
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
