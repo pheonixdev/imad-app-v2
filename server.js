@@ -33,7 +33,7 @@ res.sendFile(path.join(__dirname, 'ui', req.params.filename));
 });
 
 var names = [];
-app.get('/submit-name/', function(req, res) {
+app.get('/submit-name', function(req, res) {
    var name = req.query.name;//ToDo
    names.push(name);
    res.send(JSON.stringify(names));//ToDo
