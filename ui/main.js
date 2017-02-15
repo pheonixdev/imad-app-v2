@@ -1,5 +1,5 @@
 //counter code
-var button = document.getElementById('profButton');
+var button = document.getElementById('submit_btn');
 
 button.onclick = function() {
     
