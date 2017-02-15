@@ -1,9 +1,7 @@
 //counter code
-var submit = document.getElementById('submit_btn');
-//var button = document.getElementById('submit_btn');
+var button = document.getElementById('profButton');
 
-//button.onclick = function() {
-submit.onclick = function() {
+button.onclick = function() {
     
     //Create a request
     var request = new XMLHttpRequest();
