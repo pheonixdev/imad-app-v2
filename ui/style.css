@@ -68,8 +68,8 @@ body {
 }
 
 #nameslist{
-    display: table;
-    text-align: center;
+    display: inline-block;
+    text-align: left;
 }
 
 
