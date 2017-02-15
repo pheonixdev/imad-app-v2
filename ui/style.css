@@ -70,6 +70,7 @@ body {
 #nameslist{
     display: inline-block;
     text-align: left;
+    width: auto;
 }
 
 
