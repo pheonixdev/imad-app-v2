@@ -33,12 +33,18 @@ app.get('/test-db', function(req,res) {
 });
 
 app.get('/article/:articleName', function(req,res) {
-   pool.query('SELECT * FROM Article WHERE title = $1', [req.params.articleName], function(err) {
+   pool.query('SELECT * FROM Article WHERE title = $1', [req.params.articleName], function(err,result) {
        if(err) {
            res.status(500).send(err.toString());
        }
        else {
-           if (articleName.length)
+           if (result.rows.length === 0) {
+               res.status(404).send('Article Not Found');
+           }
+           else {
+               var articleData = result.rows[0];
+               res.send(createTemplate(articleData));
+           }
        }
    });
 });
