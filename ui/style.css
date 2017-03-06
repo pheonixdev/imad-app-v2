@@ -73,7 +73,7 @@ body {
     text-align: left;
 }
 
-#namelist li:after { content: " \00b7"; }
+#namelist li:before { content: " \00b7"; }
 
 
 
