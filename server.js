@@ -31,6 +31,7 @@ function createTemplate (data) {
         <div class = "container">
             <div> 
                 <a href = '/'>Home</a>
+                ${title}
             </div>
             <hr/>
             <div>
