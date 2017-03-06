@@ -69,7 +69,7 @@ body {
 
 #namelist li{
     display: inline;
-    display:list-item;
+    content: "\00B7";
     padding: 2px;
     text-align: left;
 }
