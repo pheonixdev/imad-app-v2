@@ -67,7 +67,7 @@ body {
     padding-top:5%;
 }
 
-ul li{
+#namelist li{
     display: inline;
     text-align: left;
 }
