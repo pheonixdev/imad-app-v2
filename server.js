@@ -15,6 +15,37 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
+function createTemplate (data) {
+    var title = data.title;
+    var date = data.date;
+    var content = data.content;
+    
+    var htmlTemplate = `
+    <html>
+    <head>
+    <title>
+    ${title}
+    </title>
+    </head>
+    <body>
+        <div class = "container">
+            <div> 
+                <a href = '/'>Home</a>
+            </div>
+            <hr/>
+            <div>
+                ${date}
+            </div>
+            <div>
+                ${content}
+            </div>
+        </div>
+    </body>
+    </html>
+    `;
+    return htmlTemplate;
+}
+
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -48,6 +79,8 @@ app.get('/article/:articleName', function(req,res) {
        }
    });
 });
+
+
 
 var counter = 0;
 app.get('/counter', function( req, res) {
