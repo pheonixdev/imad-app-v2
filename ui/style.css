@@ -67,14 +67,22 @@ body {
     padding-top:5%;
 }
 
-#namelist li{
-    display: inline;
-    padding: 2px;
-    text-align: left;
+.comment {
+    margin-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
 }
 
-#namelist li:before { content: " \2605"; }
+.commenter {
+    font-style: italic;
+    font-size: 0.8em;
+}
 
+#comment_form {
+    margin-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
 
 
 
