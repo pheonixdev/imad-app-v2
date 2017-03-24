@@ -84,23 +84,17 @@ body {
     border-bottom: 1px solid #ccc;
 }
 
-#login_btn{
-    color:#D17DCE;
-    border-radius:25%;
+.container {
+    color: #8283ce;
 }
 
-#register_btn{
-    color:#D17DCE;
-    border-radius:25%;
+#login_btn {
+    background: #C38651;
 }
 
-
-
-
-
-
-
-
+#register_btn {
+    background: #C38651;
+}
 
 
 
