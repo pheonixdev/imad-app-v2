@@ -242,6 +242,10 @@ app.get('/main.js', function (req, res){
     res.sendFile(path.join(__dirname,'ui','main.js'));
 });
 
+app.get('/article.js', function (req, res){
+    res.sendFile(path.join(__dirname,'ui','article.js'));
+});
+
 app.get('/prof_pic.jpg', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'prof_pic.jpg'));
 });
