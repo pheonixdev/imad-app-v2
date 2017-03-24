@@ -31,37 +31,38 @@ function createTemplate (data) {
     
     var htmlTemplate = `
     <html>
-    <head>
-    <title>
-    ${title}
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="/style.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-        <div class = "container">
-            <div> 
-                <a href = '/'>Home</a>
+        <head>
+            <title>
+                ${title}
+            </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link href="/style.css" rel="stylesheet" />
+        </head> 
+        <body>
+            <div class="container">
+                <div>
+                    <a href="/">Home</a>
+                </div>
+                <hr/>
+                <h3>
+                    ${heading}
+                </h3>
+                <div>
+                    ${date.toDateString()}
+                </div>
+                <div>
+                  ${content}
+                </div>
+                <hr/>
+                <h4>Comments</h4>
+                <div id="comment_form">
+                </div>
+                <div id="comments">
+                  <center>Loading comments...</center>
+                </div>
             </div>
-            <hr/>
-            <h3>
-            ${heading}
-            </h3>
-            <div>
-                ${date.toDateString()}
-            </div>
-            <div>
-                ${content}
-            </div>
-            <hr/>
-            <h4>Comments</h4>
-            <div id="comment_form">
-            </div>
-            <div id="comments">
-            <center>Loading comments...</center>
-            </div>
-        </div>
-    </body>
+            <script type="text/javascript" src="/ui/article.js"></script>
+        </body>
     </html>
     `;
     return htmlTemplate;
