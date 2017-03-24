@@ -23,11 +23,57 @@ app.use(session({
     cookie: {maxAge: 1000*60*60*24*30}
 }));
 
+function createTemplate (data) {
+    var title = data.title;
+    var date = data.date;
+    var heading = data.heading;
+    var content = data.content;
+    
+    var htmlTemplate = `
+    <html>
+    <head>
+    <title>
+    ${title}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class = "container">
+            <div> 
+                <a href = '/'>Home</a>
+            </div>
+            <hr/>
+            <h3>
+            ${heading}
+            </h3>
+            <div>
+                ${date.toDateString()}
+            </div>
+            <div>
+                ${content}
+            </div>
+            <hr/>
+            <h4>Comments</h4>
+            <div id="comment_form">
+            </div>
+            <div id="comments">
+            <center>Loading comments...</center>
+            </div>
+        </div>
+    </body>
+    </html>
+    `;
+    return htmlTemplate;
+}
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/auth/check-login', function (req, res) {
+var pool = new Pool(config);
+app.get('/check-login', function (req, res) {
    if (req.session && req.session.auth && req.session.auth.userId) {
        // Load the user object
        pool.query('SELECT * FROM "user" WHERE id = $1', [req.session.auth.userId], function (err, result) {
@@ -42,67 +88,31 @@ app.get('/auth/check-login', function (req, res) {
    }
 });
 
-
 app.get('/logout', function (req, res) {
    delete req.session.auth;
-   res.end();
-   
- /*
- var currentfile = req.params.currentlocation;
- if (currentfile === '') {
-   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
- } else {
-     res.sendFile(path.join(__dirname, 'articles', currentfile));
- }*/
+   res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
 });
 
 
-var fs = require('fs'),
-    filePath = './ui/page.html';
-
-// this for async way
-/*fs.readFile(filePath, 'utf8', function (err, data) {
-    if (err) throw err;
-    console.log(data);
-});*/
-
-//this is sync way
-var pagefile = fs.readFileSync(filePath, 'utf8');
-
-
-function createTemplate(data) {
-    
-    var title = data.title;
-    var heading = data.heading;
-    var content = data.content;
-    var date = data.date;
-    var username = data.username;
-
-    var htmlTemplate = eval('`' +  pagefile + '`');
- 
-    return htmlTemplate;
-}
-
-
-function hash(input, salt) {
+function hash (input, salt) {
+    // How do we create a hash?
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
-
-  return ['pbkdf2Sync', "10000", salt,  (hashed.toString('hex'))].join('$');
+    return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
 }
+
 
 app.get('/hash/:input', function(req, res) {
-    var hashedString = hash(req.params.input, "Salmans-App-is-working-with-hash");
-    res.send(hashedString);
+   var hashedString = hash(req.params.input, 'this-is-some-random-string');
+   res.send(hashedString);
 });
 
 app.get('/get-articles', function (req, res) {
    // make a select request
-   // return a response with the results - select all articles along with the username
-   pool.query('SELECT article.*, "user".username FROM article, "user" WHERE article.user_id = "user".id ORDER BY date DESC', function (err, result) {
+   // return a response with the results
+   pool.query('SELECT * FROM article ORDER BY date DESC', function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
-         
           res.send(JSON.stringify(result.rows));
       }
    });
@@ -120,9 +130,10 @@ app.get('/get-comments/:articleName', function (req, res) {
    });
 });
 
+
 app.get('/articles/:articleName', function (req, res) {
   // SELECT * FROM article WHERE title = '\'; DELETE WHERE a = \'asdf'
-  pool.query('SELECT article.*,"user".username FROM article, "user" WHERE title = $1 AND article.user_id="user".id', [req.params.articleName], function (err, result) {
+  pool.query("SELECT * FROM article WHERE title = $1", [req.params.articleName], function (err, result) {
     if (err) {
         res.status(500).send(err.toString());
     } else {
@@ -130,35 +141,16 @@ app.get('/articles/:articleName', function (req, res) {
             res.status(404).send('Article not found');
         } else {
             var articleData = result.rows[0];
- 
             res.send(createTemplate(articleData));
-           
         }
     }
   });
 });
 
-app.get('/get-num-comments/:articleName', function (req, res) {
-  
-  pool.query('SELECT count(comment.*) FROM comment, article WHERE article.title = $1 AND article.id = comment.article_id', [req.params.articleName], function (err, result) {
-    if (err) {
-        res.status(500).send(err.toString());
-    } else {
-        if (result.rows.length === 0) {
-            res.status(404).send('Article not found');
-        } else {
-            
-            res.send(JSON.stringify(result.rows[0]));
-           
-        }
-    }
-  });
-});
 
-//Create user function 
 app.post('/create-user', function (req, res) {
    // username, password
-   // {"username": "Salman", "password": "password"}
+   // {"username": "tanmai", "password": "password"}
    // JSON
    var username = req.body.username;
    var password = req.body.password;
@@ -179,7 +171,6 @@ app.post('/login', function (req, res) {
    
    pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
       if (err) {
-         // alert(res.send(err.toString()));
           res.status(500).send(err.toString());
       } else {
           if (result.rows.length === 0) {
@@ -196,6 +187,7 @@ app.post('/login', function (req, res) {
                 // set cookie with a session id
                 // internally, on the server side, it maps the session id to an object
                 // { auth: {userId }}
+                
                 res.send('credentials correct!');
                 
               } else {
@@ -205,6 +197,7 @@ app.post('/login', function (req, res) {
       }
    });
 });
+
 
 app.post('/submit-comment/:articleName', function (req, res) {
    // Check if the user is logged in
@@ -226,7 +219,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
                             if (err) {
                                 res.status(500).send(err.toString());
                             } else {
-                                res.status(200).send('Comment inserted!')
+                                res.status(200).send('Comment inserted!');
                             }
                         });
                 }
@@ -237,69 +230,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
     }
 });
 
- app.get('/get-stats', function (req, res) {
-   // make a select request
-   // return a response with the results - select all counts of articles, comments and users
-   pool.query('SELECT (select count(*)  from article) as articleCount, (select count(*)  from "user") as userCount, (select count(*) FROM comment) as commentCount', function (err, result) {
-       
-      if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          
-          res.send(JSON.stringify(result.rows));
-      }
-   });
-});
 
- app.get('/get-footercomments', function (req, res) {
-   // make a select request
-   // return a response with the results - select all counts of articles, comments and users
-   pool.query('SELECT comment.*, "user".username, article.title FROM comment, "user", article WHERE comment.user_id = "user".id AND comment.article_id = article.id ORDER BY comment.timestamp DESC', function (err, result) {
-       
-      if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          
-          res.send(JSON.stringify(result.rows));
-      }
-   });
-});
-
-
-//Create user function 
-app.post('/submit-article', function (req, res) {
-   // username, password
-   // {"username": "Salman", "password": "password"}
-   // JSON
-   var username = req.session.auth.userId;
-   var article = req.body.article;
-   var title = req.body.title;
-   var heading = req.body.heading;
-  // console.log('username:'+username + 'Article:' + article + 'title: ' + title);
-  /* pool.query('SELECT "user".id FROM "user" WHERE "user".username=$1',[username], function(err, result) {
-       if (err) {
-           res.status(500).send(err.toString());
-       } else {
-        var userid = result.rows[0]; 
-       }
-      
-   });*/
-   pool.query('INSERT INTO "article" (user_id, title, content, heading) VALUES ($1, $2, $3, $4)', [req.session.auth.userId, title, article, heading], function (err, result) {
-      if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          res.send('Article Added Successfully: ' + heading);
-      }
-   });
-});
-
-
-/****
- * 
- * serve static files
- * 
- ****/
- 
 
 app.get('/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
@@ -315,18 +246,6 @@ app.get('/article.js', function (req, res){
 
 app.get('/prof_pic.jpg', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'prof_pic.jpg'));
-});
-
-app.get('/favicon.ico', function (req, res) {
-  res.sendFile(path.join(__dirname, '/', 'favicon.ico'));
-});
-
-app.get('/js/jquery-1.10.2.min.js', function (req, res) {
-   res.sendFile(path.join(__dirname,'js','jquery-1.10.2.min.js')); 
-});
-
-app.get('/js/jquery-migrate-1.2.1.min.js', function (req, res) {
-   res.sendFile(path.join(__dirname,'js','jquery-migrate-1.2.1.min.js')); 
 });
 
 app.get('/:filename', function (req, res) {
