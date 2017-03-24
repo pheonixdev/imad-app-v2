@@ -1,4 +1,14 @@
-//Submit username/password
+function loadLoginForm () {
+    var loginHtml = `
+        <h3>Login/Register to unlock awesome features</h3>
+        <input type="text" id="username" placeholder="username" />
+        <input type="password" id="password" />
+        <br/><br/>
+        <input type="submit" id="login_btn" value="Login" />
+        <input type="submit" id="register_btn" value="Register" />
+        `;
+    document.getElementById('login_area').innerHTML = loginHtml;
+    
 
 var submit = document.getElementById('login_btn');
 submit.onclick = function() {
@@ -68,6 +78,31 @@ var register = document.getElementById('register_btn');
     };
 }
 
+function loadLoggedInUser (username) {
+    var loginArea = document.getElementById('login_area');
+    loginArea.innerHTML = `
+        <h3> Hi <i>${username}</i></h3>
+        <a href="/logout">Logout</a>
+    `;
+}
+
+function loadLogin () {
+    // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                loadLoggedInUser(this.responseText);
+            } else {
+                loadLoginForm();
+            }
+        }
+    };
+    
+    request.open('GET', '/check-login', true);
+    request.send(null);
+}
+
 function loadArticles () {
         // Check if the user is already logged in
     var request = new XMLHttpRequest();
@@ -82,10 +117,10 @@ function loadArticles () {
                     <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
                     (${articleData[i].date.split('T')[0]})</li>`;
                 }
-                content += "</ul>"
+                content += "</ul>";
                 articles.innerHTML = content;
             } else {
-                articles.innerHTML('Oops! Could not load all articles!')
+                articles.innerHTML('Oops! Could not load all articles!');
             }
         }
     };
@@ -100,9 +135,3 @@ loadLogin();
 
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
-
-
-
-
-
-
